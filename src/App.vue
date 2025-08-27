@@ -1,6 +1,6 @@
 <template>
   <div v-if="survey">
-    <SurveyComponent :model="survey" />
+    <SurveyComponent :model="survey as any" />
   </div>
   <div v-else>
     <p>Загрузка опроса...</p>
@@ -71,7 +71,7 @@
           const data = await import(`./tasks/${newId}.json`);
           const surveyModel = new Model(data.default);
           surveyModel.onComplete.add((sender, _) => {
-              saveSurveyResults(sender.data, newId);
+              saveSurveyResults(sender.data, newId as string);
           });
           survey.value = surveyModel;
         } catch (error) {
