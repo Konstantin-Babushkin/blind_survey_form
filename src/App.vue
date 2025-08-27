@@ -1,5 +1,10 @@
 <template>
-  <SurveyComponent :model="survey" />
+  <div v-if="survey">
+    <SurveyComponent :model="survey" />
+  </div>
+  <div v-else>
+    <p>Загрузка опроса...</p>
+  </div>
   <button @click="scrollToTop" v-show="showButton" class="scroll-to-top-button">
     &#8593;
   </button>
@@ -9,11 +14,10 @@
     import { SurveyComponent } from "survey-vue3-ui";
     import {computed, ref, watch, onMounted, onUnmounted} from "vue";
     import { useRoute } from "vue-router";
-    import 'survey-core/survey-core.css';
 
     const route = useRoute();
-    const id = computed(() => route.query.id)
-    const survey = ref();
+    const id = computed(() => route.query.id || 'a1') // по умолчанию загружаем a1
+    const survey = ref<Model | null>(null);
     const showButton = ref(false);
 
     const handleScroll = () => {
@@ -37,11 +41,16 @@
 
     watch(id, async (newId) => {
       if (newId) {
-        const data = await import(`./tasks/${newId}.json`);
-        survey.value = new Model(data.default);
-        survey.value.onComplete.add((sender, _) => {
-            console.log(JSON.stringify(sender.data, null, 3));
-        });
+        try {
+          const data = await import(`./tasks/${newId}.json`);
+          const surveyModel = new Model(data.default);
+          surveyModel.onComplete.add((sender, _) => {
+              console.log(JSON.stringify(sender.data, null, 3));
+          });
+          survey.value = surveyModel;
+        } catch (error) {
+          console.error(`Ошибка загрузки опроса ${newId}:`, error);
+        }
       }
     }, { immediate: true });
 </script>
