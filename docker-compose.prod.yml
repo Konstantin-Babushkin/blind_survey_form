@@ -17,8 +17,6 @@ services:
       - "traefik.http.routers.survey.entrypoints=websecure"
       - "traefik.http.routers.survey.tls.certresolver=myresolver"
       - "traefik.http.services.survey.loadbalancer.server.port=80"
-      # Дополнительные middleware для безопасности
-      - "traefik.http.routers.survey.middlewares=security-headers@file"
     environment:
       - NODE_ENV=production
     volumes:
