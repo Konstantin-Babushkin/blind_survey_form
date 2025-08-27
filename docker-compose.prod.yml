@@ -1,0 +1,29 @@
+# Продакшен версия с дополнительными настройками
+version: '3.8'
+
+services:
+  survey:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: blind-survey-app:latest
+    container_name: blind-survey-app
+    restart: unless-stopped
+    networks:
+      - traefik
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.survey.rule=Host(`survey.timofeev41.com`)"
+      - "traefik.http.routers.survey.entrypoints=websecure"
+      - "traefik.http.routers.survey.tls.certresolver=myresolver"
+      - "traefik.http.services.survey.loadbalancer.server.port=80"
+      # Дополнительные middleware для безопасности
+      - "traefik.http.routers.survey.middlewares=security-headers@file"
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./logs:/var/log/nginx:rw
+
+networks:
+  traefik:
+    external: true
