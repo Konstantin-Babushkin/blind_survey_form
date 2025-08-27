@@ -6,7 +6,7 @@ services:
     container_name: blind-survey-app
     restart: unless-stopped
     networks:
-      - traefik
+      - traefiknet
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.survey.rule=Host(`survey.timofeev41.com`)"
@@ -20,5 +20,5 @@ services:
       - ./logs:/var/log/nginx
 
 networks:
-  traefik:
+  traefiknet:
     external: true
