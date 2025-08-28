@@ -1,0 +1,218 @@
+{
+  "pages": [
+    {
+      "name": "b5",
+      "elements": [
+        {
+          "type": "html",
+          "name": "b5_context",
+          "title": "Task B5",
+          "html": "<p><strong>Original</strong>: Alex Watts is a reliable, steady contributor; cross-training would broaden skills and impact.</p><hr/><p><strong><span style=\"color:red;\">Red Panda</span></strong><br/>Alex, you are a valued and reliable contributor. To expand your impact and professional growth, we highly recommend cross-training. This will broaden your skillset and increase your versatility within the team.</p><br/><p><strong><span style=\"color:#04AFF2;\">Blue Whale</span></strong><br/>Alex, you are a valued, reliable, and steady performer. To broaden your impact and skillset, we recommend exploring cross-training opportunities. Developing additional capabilities will not only increase your versatility but also enhance your contributions to the team's overall success.</p><br/><p><strong><span style=\"color:#04F247;\">Green Elephant</span></strong><br/>Alex consistently delivers high-quality work, demonstrating strong reliability and a steady contribution to the team's success. To further enhance their valuable impact, we recommend exploring cross-training opportunities. This would broaden Alex's skill set, increase versatility, and allow them to contribute to an even wider range of projects, fostering continued professional growth.</p><br/><p><strong><span style=\"color:goldenrod;\">Golden Fish</span></strong><br/>Alex Watts is a reliable and consistent contributor who delivers high-quality work. Expanding expertise through cross-training would further enhance skills, increase versatility, and amplify overall impact across teams.</p>"
+        },
+        {
+          "type": "ranking",
+          "name": "b5_fluency",
+          "title": "Fluency",
+          "description": "Rank from most to least smooth and error-free.",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "gemini-2.5-pro",
+              "text": "Red Panda"
+            },
+            {
+              "value": "DeepSeek-R1-0528",
+              "text": "Blue Whale"
+            },
+            {
+              "value": "gemini-2.5-flash",
+              "text": "Green Elephant"
+            },
+            {
+              "value": "Qwen3-235B-A22B-2507",
+              "text": "Golden Fish"
+            }
+          ]
+        },
+        {
+          "type": "ranking",
+          "name": "b5_coherence",
+          "title": "Coherence",
+          "description": "Rank from most to least logical and easy to follow.",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "gemini-2.5-pro",
+              "text": "Red Panda"
+            },
+            {
+              "value": "DeepSeek-R1-0528",
+              "text": "Blue Whale"
+            },
+            {
+              "value": "gemini-2.5-flash",
+              "text": "Green Elephant"
+            },
+            {
+              "value": "Qwen3-235B-A22B-2507",
+              "text": "Golden Fish"
+            }
+          ]
+        },
+        {
+          "type": "ranking",
+          "name": "b5_conciseness",
+          "title": "Conciseness",
+          "description": "Rank from most to least clear and compact.",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "gemini-2.5-pro",
+              "text": "Red Panda"
+            },
+            {
+              "value": "DeepSeek-R1-0528",
+              "text": "Blue Whale"
+            },
+            {
+              "value": "gemini-2.5-flash",
+              "text": "Green Elephant"
+            },
+            {
+              "value": "Qwen3-235B-A22B-2507",
+              "text": "Golden Fish"
+            }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "name": "b5_factual_accuracy",
+          "title": "Factual accuracy",
+          "description": "Select all texts that are factually correct given the Original.",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "gemini-2.5-pro",
+              "text": "Red Panda"
+            },
+            {
+              "value": "DeepSeek-R1-0528",
+              "text": "Blue Whale"
+            },
+            {
+              "value": "gemini-2.5-flash",
+              "text": "Green Elephant"
+            },
+            {
+              "value": "Qwen3-235B-A22B-2507",
+              "text": "Golden Fish"
+            }
+          ],
+          "showSelectAllItem": true,
+          "selectAllText": "All"
+        },
+        {
+          "type": "ranking",
+          "name": "b5_sentiment",
+          "title": "Sentiment match",
+          "description": "Rank from most to least similar to the Original in style and sentiment.",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "gemini-2.5-pro",
+              "text": "Red Panda"
+            },
+            {
+              "value": "DeepSeek-R1-0528",
+              "text": "Blue Whale"
+            },
+            {
+              "value": "gemini-2.5-flash",
+              "text": "Green Elephant"
+            },
+            {
+              "value": "Qwen3-235B-A22B-2507",
+              "text": "Golden Fish"
+            }
+          ]
+        },
+        {
+          "type": "ranking",
+          "name": "b5_motivational",
+          "title": "Motivational tone",
+          "description": "Rank from most to least empathetic and encouraging.",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "gemini-2.5-pro",
+              "text": "Red Panda"
+            },
+            {
+              "value": "DeepSeek-R1-0528",
+              "text": "Blue Whale"
+            },
+            {
+              "value": "gemini-2.5-flash",
+              "text": "Green Elephant"
+            },
+            {
+              "value": "Qwen3-235B-A22B-2507",
+              "text": "Golden Fish"
+            }
+          ]
+        },
+        {
+          "type": "ranking",
+          "name": "b5_constructiveness",
+          "title": "Constructiveness",
+          "description": "Rank from most to least helpful and constructive.",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "gemini-2.5-pro",
+              "text": "Red Panda"
+            },
+            {
+              "value": "DeepSeek-R1-0528",
+              "text": "Blue Whale"
+            },
+            {
+              "value": "gemini-2.5-flash",
+              "text": "Green Elephant"
+            },
+            {
+              "value": "Qwen3-235B-A22B-2507",
+              "text": "Golden Fish"
+            }
+          ]
+        },
+        {
+          "type": "ranking",
+          "name": "b5_final",
+          "title": "Final choice",
+          "description": "Rank from most to least suitable as a final version.",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "gemini-2.5-pro",
+              "text": "Red Panda"
+            },
+            {
+              "value": "DeepSeek-R1-0528",
+              "text": "Blue Whale"
+            },
+            {
+              "value": "gemini-2.5-flash",
+              "text": "Green Elephant"
+            },
+            {
+              "value": "Qwen3-235B-A22B-2507",
+              "text": "Golden Fish"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "headerView": "advanced"
+}

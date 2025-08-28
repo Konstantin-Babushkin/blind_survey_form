@@ -1,0 +1,218 @@
+{
+  "pages": [
+    {
+      "name": "c4",
+      "elements": [
+        {
+          "type": "html",
+          "name": "c4_context",
+          "title": "Task C4",
+          "html": "<p><strong>Original</strong>: Elliot Gray attends meetings but shows little ambition and rarely seeks clients; not promotion-ready.</p><hr/><p><strong><span style=\"color:red;\">Red Panda</span></strong><br/>Elliot, while you are present in meetings, we have observed a lack of ambition, particularly in seeking new clients. Demonstrating greater proactivity and initiative is essential for you to be considered promotion-ready.</p><br/><p><strong><span style=\"color:#04AFF2;\">Blue Whale</span></strong><br/>Elliot, while you reliably attend meetings, we need to see greater initiative and proactive client engagement to demonstrate readiness for advancement. Currently, ambition appears low. Let's create a development roadmap focused on building these crucial skills for future growth opportunities.</p><br/><p><strong><span style=\"color:#04F247;\">Green Elephant</span></strong><br/>Elliot consistently attends meetings, demonstrating a foundational level of engagement. However, to progress to the next level, Elliot needs to proactively seek out new client opportunities and demonstrate greater ambition in driving initiatives. Developing these areas will be crucial for future promotion considerations.</p><br/><p><strong><span style=\"color:goldenrod;\">Golden Fish</span></strong><br/>Elliot Gray consistently attends meetings and fulfills basic responsibilities, but demonstrates limited initiative and ambition. He rarely engages in client outreach or pursues business development opportunities, indicating a lack of proactive contribution. Given his current level of engagement, he is not yet ready for promotion. Greater initiative and a stronger drive to expand his impact would be essential for advancement.</p>"
+        },
+        {
+          "type": "ranking",
+          "name": "c4_fluency",
+          "title": "Fluency",
+          "description": "Rank from most to least smooth and error-free.",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "gemini-2.5-pro",
+              "text": "Red Panda"
+            },
+            {
+              "value": "DeepSeek-R1-0528",
+              "text": "Blue Whale"
+            },
+            {
+              "value": "gemini-2.5-flash",
+              "text": "Green Elephant"
+            },
+            {
+              "value": "Qwen3-235B-A22B-2507",
+              "text": "Golden Fish"
+            }
+          ]
+        },
+        {
+          "type": "ranking",
+          "name": "c4_coherence",
+          "title": "Coherence",
+          "description": "Rank from most to least logical and easy to follow.",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "gemini-2.5-pro",
+              "text": "Red Panda"
+            },
+            {
+              "value": "DeepSeek-R1-0528",
+              "text": "Blue Whale"
+            },
+            {
+              "value": "gemini-2.5-flash",
+              "text": "Green Elephant"
+            },
+            {
+              "value": "Qwen3-235B-A22B-2507",
+              "text": "Golden Fish"
+            }
+          ]
+        },
+        {
+          "type": "ranking",
+          "name": "c4_conciseness",
+          "title": "Conciseness",
+          "description": "Rank from most to least clear and compact.",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "gemini-2.5-pro",
+              "text": "Red Panda"
+            },
+            {
+              "value": "DeepSeek-R1-0528",
+              "text": "Blue Whale"
+            },
+            {
+              "value": "gemini-2.5-flash",
+              "text": "Green Elephant"
+            },
+            {
+              "value": "Qwen3-235B-A22B-2507",
+              "text": "Golden Fish"
+            }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "name": "c4_factual_accuracy",
+          "title": "Factual accuracy",
+          "description": "Select all texts that are factually correct given the Original.",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "gemini-2.5-pro",
+              "text": "Red Panda"
+            },
+            {
+              "value": "DeepSeek-R1-0528",
+              "text": "Blue Whale"
+            },
+            {
+              "value": "gemini-2.5-flash",
+              "text": "Green Elephant"
+            },
+            {
+              "value": "Qwen3-235B-A22B-2507",
+              "text": "Golden Fish"
+            }
+          ],
+          "showSelectAllItem": true,
+          "selectAllText": "All"
+        },
+        {
+          "type": "ranking",
+          "name": "c4_sentiment",
+          "title": "Sentiment match",
+          "description": "Rank from most to least similar to the Original in style and sentiment.",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "gemini-2.5-pro",
+              "text": "Red Panda"
+            },
+            {
+              "value": "DeepSeek-R1-0528",
+              "text": "Blue Whale"
+            },
+            {
+              "value": "gemini-2.5-flash",
+              "text": "Green Elephant"
+            },
+            {
+              "value": "Qwen3-235B-A22B-2507",
+              "text": "Golden Fish"
+            }
+          ]
+        },
+        {
+          "type": "ranking",
+          "name": "c4_motivational",
+          "title": "Motivational tone",
+          "description": "Rank from most to least empathetic and encouraging.",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "gemini-2.5-pro",
+              "text": "Red Panda"
+            },
+            {
+              "value": "DeepSeek-R1-0528",
+              "text": "Blue Whale"
+            },
+            {
+              "value": "gemini-2.5-flash",
+              "text": "Green Elephant"
+            },
+            {
+              "value": "Qwen3-235B-A22B-2507",
+              "text": "Golden Fish"
+            }
+          ]
+        },
+        {
+          "type": "ranking",
+          "name": "c4_constructiveness",
+          "title": "Constructiveness",
+          "description": "Rank from most to least helpful and constructive.",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "gemini-2.5-pro",
+              "text": "Red Panda"
+            },
+            {
+              "value": "DeepSeek-R1-0528",
+              "text": "Blue Whale"
+            },
+            {
+              "value": "gemini-2.5-flash",
+              "text": "Green Elephant"
+            },
+            {
+              "value": "Qwen3-235B-A22B-2507",
+              "text": "Golden Fish"
+            }
+          ]
+        },
+        {
+          "type": "ranking",
+          "name": "c4_final",
+          "title": "Final choice",
+          "description": "Rank from most to least suitable as a final version.",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "gemini-2.5-pro",
+              "text": "Red Panda"
+            },
+            {
+              "value": "DeepSeek-R1-0528",
+              "text": "Blue Whale"
+            },
+            {
+              "value": "gemini-2.5-flash",
+              "text": "Green Elephant"
+            },
+            {
+              "value": "Qwen3-235B-A22B-2507",
+              "text": "Golden Fish"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "headerView": "advanced"
+}

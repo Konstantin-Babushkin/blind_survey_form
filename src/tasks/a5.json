@@ -1,0 +1,218 @@
+{
+  "pages": [
+    {
+      "name": "a5",
+      "elements": [
+        {
+          "type": "html",
+          "name": "a5_context",
+          "title": "Task A5",
+          "html": "<p><strong>Original</strong>: Briley McKnight excels at idea generation but struggles to execute and follow through.</p><hr/><p><strong><span style=\"color:red;\">Red Panda</span></strong><br/>Briley, your creativity in idea generation is a major asset. To grow, your focus should be on improving execution and follow-through. Let's create a plan with clear milestones to help turn your great ideas into reality.</p><br/><p><strong><span style=\"color:#04AFF2;\">Blue Whale</span></strong><br/>Briley, you excel at generating innovative and valuable ideas. However, translating these ideas into action remains a challenge; we need to see stronger execution and consistent follow-through. Let's focus on developing concrete plans and accountability to bridge this gap between ideation and implementation.</p><br/><p><strong><span style=\"color:#04F247;\">Green Elephant</span></strong><br/>Briley consistently demonstrates exceptional creativity and is a valuable asset in brainstorming sessions, frequently generating innovative ideas that significantly contribute to our strategic thinking. However, there's a recurring challenge with project execution and follow-through. To fully leverage Briley's potential, we need to focus on developing stronger project management skills and ensuring consistent task completion. This will involve clearer action planning and regular check-ins to translate brilliant concepts into tangible results.</p><br/><p><strong><span style=\"color:goldenrod;\">Golden Fish</span></strong><br/>Briley McKnight consistently demonstrates strong creativity and excels at generating innovative ideas. However, there is room for improvement in executing and following through on those ideas to ensure completion and impact. With greater focus on organization and accountability, Briley can further enhance overall effectiveness.</p>"
+        },
+        {
+          "type": "ranking",
+          "name": "a5_fluency",
+          "title": "Fluency",
+          "description": "Rank from most to least smooth and error-free.",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "gemini-2.5-pro",
+              "text": "Red Panda"
+            },
+            {
+              "value": "DeepSeek-R1-0528",
+              "text": "Blue Whale"
+            },
+            {
+              "value": "gemini-2.5-flash",
+              "text": "Green Elephant"
+            },
+            {
+              "value": "Qwen3-235B-A22B-2507",
+              "text": "Golden Fish"
+            }
+          ]
+        },
+        {
+          "type": "ranking",
+          "name": "a5_coherence",
+          "title": "Coherence",
+          "description": "Rank from most to least logical and easy to follow.",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "gemini-2.5-pro",
+              "text": "Red Panda"
+            },
+            {
+              "value": "DeepSeek-R1-0528",
+              "text": "Blue Whale"
+            },
+            {
+              "value": "gemini-2.5-flash",
+              "text": "Green Elephant"
+            },
+            {
+              "value": "Qwen3-235B-A22B-2507",
+              "text": "Golden Fish"
+            }
+          ]
+        },
+        {
+          "type": "ranking",
+          "name": "a5_conciseness",
+          "title": "Conciseness",
+          "description": "Rank from most to least clear and compact.",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "gemini-2.5-pro",
+              "text": "Red Panda"
+            },
+            {
+              "value": "DeepSeek-R1-0528",
+              "text": "Blue Whale"
+            },
+            {
+              "value": "gemini-2.5-flash",
+              "text": "Green Elephant"
+            },
+            {
+              "value": "Qwen3-235B-A22B-2507",
+              "text": "Golden Fish"
+            }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "name": "a5_factual_accuracy",
+          "title": "Factual accuracy",
+          "description": "Select all texts that are factually correct given the Original.",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "gemini-2.5-pro",
+              "text": "Red Panda"
+            },
+            {
+              "value": "DeepSeek-R1-0528",
+              "text": "Blue Whale"
+            },
+            {
+              "value": "gemini-2.5-flash",
+              "text": "Green Elephant"
+            },
+            {
+              "value": "Qwen3-235B-A22B-2507",
+              "text": "Golden Fish"
+            }
+          ],
+          "showSelectAllItem": true,
+          "selectAllText": "All"
+        },
+        {
+          "type": "ranking",
+          "name": "a5_sentiment",
+          "title": "Sentiment match",
+          "description": "Rank from most to least similar to the Original in style and sentiment.",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "gemini-2.5-pro",
+              "text": "Red Panda"
+            },
+            {
+              "value": "DeepSeek-R1-0528",
+              "text": "Blue Whale"
+            },
+            {
+              "value": "gemini-2.5-flash",
+              "text": "Green Elephant"
+            },
+            {
+              "value": "Qwen3-235B-A22B-2507",
+              "text": "Golden Fish"
+            }
+          ]
+        },
+        {
+          "type": "ranking",
+          "name": "a5_motivational",
+          "title": "Motivational tone",
+          "description": "Rank from most to least empathetic and encouraging.",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "gemini-2.5-pro",
+              "text": "Red Panda"
+            },
+            {
+              "value": "DeepSeek-R1-0528",
+              "text": "Blue Whale"
+            },
+            {
+              "value": "gemini-2.5-flash",
+              "text": "Green Elephant"
+            },
+            {
+              "value": "Qwen3-235B-A22B-2507",
+              "text": "Golden Fish"
+            }
+          ]
+        },
+        {
+          "type": "ranking",
+          "name": "a5_constructiveness",
+          "title": "Constructiveness",
+          "description": "Rank from most to least helpful and constructive.",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "gemini-2.5-pro",
+              "text": "Red Panda"
+            },
+            {
+              "value": "DeepSeek-R1-0528",
+              "text": "Blue Whale"
+            },
+            {
+              "value": "gemini-2.5-flash",
+              "text": "Green Elephant"
+            },
+            {
+              "value": "Qwen3-235B-A22B-2507",
+              "text": "Golden Fish"
+            }
+          ]
+        },
+        {
+          "type": "ranking",
+          "name": "a5_final",
+          "title": "Final choice",
+          "description": "Rank from most to least suitable as a final version.",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "gemini-2.5-pro",
+              "text": "Red Panda"
+            },
+            {
+              "value": "DeepSeek-R1-0528",
+              "text": "Blue Whale"
+            },
+            {
+              "value": "gemini-2.5-flash",
+              "text": "Green Elephant"
+            },
+            {
+              "value": "Qwen3-235B-A22B-2507",
+              "text": "Golden Fish"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "headerView": "advanced"
+}
