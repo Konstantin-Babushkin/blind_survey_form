@@ -3,7 +3,7 @@
     <SurveyComponent :model="survey as any" />
   </div>
   <div v-else>
-    <p>Загрузка опроса...</p>
+    <p>Loading...</p>
   </div>
   <button @click="scrollToTop" v-show="showButton" class="scroll-to-top-button">
     &#8593;
@@ -13,16 +13,16 @@
     import { Model } from "survey-core";
     import { SurveyComponent } from "survey-vue3-ui";
     import {computed, ref, watch, onMounted, onUnmounted} from "vue";
-    import { useRoute } from "vue-router";
+    import { useRoute, useRouter } from "vue-router";
     import { db } from "./firebase";
     import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
     const route = useRoute();
-    const id = computed(() => route.query.id || 'a1') // по умолчанию загружаем a1
+    const router = useRouter();
+    const id = computed(() => route.query.id || 'a1')
     const survey = ref<Model | null>(null);
     const showButton = ref(false);
 
-    // Функция для сохранения результатов в Firebase
     const saveSurveyResults = async (surveyData: any, taskId: string) => {
       try {
         const docRef = await addDoc(collection(db, "survey_results"), {
@@ -32,17 +32,16 @@
           userAgent: navigator.userAgent,
           url: window.location.href
         });
-        
-        console.log("✅ Результаты сохранены в Firebase с ID:", docRef.id);
-        console.log("📊 Данные опроса:", JSON.stringify(surveyData, null, 3));
-        
-        // Показываем уведомление пользователю
-        alert("Спасибо! Ваши ответы успешно сохранены.");
-        
+
+        console.log("✅ Results saved to Firebase with ID:", docRef.id);
+        console.log("📊 Survey data:", JSON.stringify(surveyData, null, 3));
+
+        alert("Thank you! Your answers have been saved successfully.");
+
       } catch (error) {
-        console.error("❌ Ошибка сохранения в Firebase:", error);
-        console.log("📊 Данные опроса (НЕ сохранены):", JSON.stringify(surveyData, null, 3));
-        alert("Произошла ошибка при сохранении. Пожалуйста, сообщите администратору.");
+        console.error("❌ Error saving to Firebase:", error);
+        console.log("📊 Survey data (NOT saved):", JSON.stringify(surveyData, null, 3));
+        alert("An error occurred while saving. Please notify the administrator.");
       }
     };
 
@@ -70,15 +69,39 @@
         try {
           const data = await import(`./tasks/${newId}.json`);
           const surveyModel = new Model(data.default);
+
+          const pageFromUrl = route.query.page;
+          if (pageFromUrl && !isNaN(parseInt(pageFromUrl as string))) {
+            surveyModel.currentPageNo = parseInt(pageFromUrl as string);
+          }
+
+          surveyModel.onCurrentPageChanged.add((sender, _) => {
+            const newPage = sender.currentPageNo;
+            if (String(newPage) !== route.query.page) {
+              router.replace({ query: { ...route.query, page: newPage } });
+            }
+          });
+
           surveyModel.onComplete.add((sender, _) => {
               saveSurveyResults(sender.data, newId as string);
+              const { page, ...query } = route.query;
+              router.replace({ query });
           });
           survey.value = surveyModel;
         } catch (error) {
-          console.error(`Ошибка загрузки опроса ${newId}:`, error);
+          console.error(`Error loading survey ${newId}:`, error);
         }
       }
     }, { immediate: true });
+
+    watch(() => route.query.page, (newPageStr) => {
+      if (survey.value) {
+        const newPage = newPageStr ? parseInt(newPageStr as string, 10) : 0;
+        if (!isNaN(newPage) && survey.value.currentPageNo !== newPage) {
+          survey.value.currentPageNo = newPage;
+        }
+      }
+    });
 </script>
 
 <style scoped>
